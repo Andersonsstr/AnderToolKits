@@ -19,21 +19,21 @@ namespace AnderToolKits.src.Classes
 
         private static void RemoverArquivos(string diretorioRaiz, string caminho, bool limparDiretoriosFilhos)
         {
-            string FullPath = diretorioRaiz + caminho + "\\";
-            if (Directory.Exists(FullPath))
+            string caminhoCompleto = diretorioRaiz + caminho + "\\";
+            if (Directory.Exists(caminhoCompleto))
             {
-                DirectoryInfo DInfo = new DirectoryInfo(FullPath);
+                DirectoryInfo DInfo = new DirectoryInfo(caminhoCompleto);
                 FileAttributes Attr = DInfo.Attributes;
                 DInfo.Attributes = FileAttributes.Normal;
 
-                foreach (string nomeDoArquivo in Directory.GetFiles(FullPath))
+                foreach (string nomeDoArquivo in Directory.GetFiles(caminhoCompleto))
                 {
                     ApagaArquivo(nomeDoArquivo);
                 }
 
                 if (limparDiretoriosFilhos)
                 {
-                    foreach (string diretorioFilho in Directory.GetDirectories(FullPath))
+                    foreach (string diretorioFilho in Directory.GetDirectories(caminhoCompleto))
                     {
                         try { RemoverArquivos("", diretorioFilho, true); } catch { };
                         try { Directory.Delete(diretorioFilho); } catch { }
@@ -44,11 +44,11 @@ namespace AnderToolKits.src.Classes
             }
         }
 
-        private static void ApagaArquivo(string FileName)
+        private static void ApagaArquivo(string nomeDoArquivo)
         {
-            if (File.Exists(FileName))
+            if (File.Exists(nomeDoArquivo))
             {
-                try { File.Delete(FileName); } catch { }
+                try { File.Delete(nomeDoArquivo); } catch { }
             }
         }
     }
