@@ -100,6 +100,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Windows-10-Calculator-Fluent-Icon-Big-256.png" />
+    <None Include="Resources\pngguru.com.png" />
     <Content Include="toolkitsicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

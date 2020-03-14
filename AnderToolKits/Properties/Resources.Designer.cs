@@ -59,5 +59,25 @@ namespace AnderToolKits.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngguru_com {
+            get {
+                object obj = ResourceManager.GetObject("pngguru.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Windows_10_Calculator_Fluent_Icon_Big_256 {
+            get {
+                object obj = ResourceManager.GetObject("Windows-10-Calculator-Fluent-Icon-Big-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

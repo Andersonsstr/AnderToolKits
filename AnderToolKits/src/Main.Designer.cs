@@ -169,7 +169,7 @@
             // lblHostname
             // 
             this.lblHostname.AutoSize = true;
-            this.lblHostname.Location = new System.Drawing.Point(66, 47);
+            this.lblHostname.Location = new System.Drawing.Point(343, 34);
             this.lblHostname.Name = "lblHostname";
             this.lblHostname.Size = new System.Drawing.Size(58, 13);
             this.lblHostname.TabIndex = 10;
@@ -178,7 +178,7 @@
             // lblIP
             // 
             this.lblIP.AutoSize = true;
-            this.lblIP.Location = new System.Drawing.Point(66, 60);
+            this.lblIP.Location = new System.Drawing.Point(343, 47);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(20, 13);
             this.lblIP.TabIndex = 11;
