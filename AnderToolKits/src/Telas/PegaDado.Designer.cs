@@ -50,6 +50,7 @@
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(200, 20);
             this.lblInput.TabIndex = 1;
+            this.lblInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lblInput_KeyPress);
             // 
             // btnOk
             // 
@@ -83,6 +84,7 @@
             this.Name = "PegaDado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mstsc";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PegaDado_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

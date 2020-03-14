@@ -25,7 +25,7 @@ namespace ToolKits_Template.src.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExibeMessageBox.Erro(ex.Message);
             }
         }
 

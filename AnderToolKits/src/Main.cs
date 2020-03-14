@@ -27,11 +27,12 @@ namespace AnderToolKits
             lblSO.Text = RuntimeInformation.OSDescription + arquitetura;
             lblHostname.Text = Environment.MachineName;
 
-            if(Dns.GetHostEntry(Dns.GetHostName()).AddressList.Length > 0)
+            if (Dns.GetHostEntry(Dns.GetHostName()).AddressList.Length > 0)
             {
                 foreach (IPAddress endereco in Dns.GetHostEntry(Dns.GetHostName()).AddressList)
                 {
-                    if (!endereco.ToString().Contains(":")){
+                    if (!endereco.ToString().Contains(":"))
+                    {
                         lblIP.Text = endereco.ToString();
                         break;
                     };
@@ -51,7 +52,7 @@ namespace AnderToolKits
 
         private void btnMstsc_Click(object sender, EventArgs e)
         {
-            PegaDado mstsc = new PegaDado("Informe o IP/Hostname para iniciar o acesso");
+            PegaDado mstsc = new PegaDado("Informe o IP/Hostname para iniciar o acesso", "");
             mstsc.ShowDialog();
 
             if (mstsc.DialogResult == DialogResult.OK)
@@ -61,21 +62,28 @@ namespace AnderToolKits
         }
         private void btnPing_Click(object sender, EventArgs e)
         {
-            PegaDado pegaDado = new PegaDado("Informe o IP/Hostname para verificar");
+            PegaDado pegaDado = new PegaDado("Informe o IP/Hostname para verificar", "Necessário informar IP ou Hostname");
             pegaDado.ShowDialog();
 
             if (pegaDado.DialogResult == DialogResult.OK)
             {
-                Ping ping = new Ping();
-                PingReply pingReply = ping.Send(pegaDado.dadoInformado);
+                try
+                {
+                    Ping ping = new Ping();
+                    PingReply pingReply = ping.Send(pegaDado.dadoInformado);
 
-                if (pingReply.Status == IPStatus.Success)
-                {
-                    MessageBox.Show("Máquina Online!");
+                    if (pingReply.Status == IPStatus.Success)
+                    {
+                        MessageBox.Show("Máquina Online!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Máquina Offline!");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Máquina Offline!");
+                    ExibeMessageBox.Erro(ex.Message);                    
                 }
             }
         }
@@ -107,19 +115,13 @@ namespace AnderToolKits
 
         private void btnLimparTemporariosWindows_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBoxConfirmacao("Deseja mesmo limpar os arquivos temporários de sistema e usuário", "Alerta");
-           
-            if(dr == DialogResult.OK)
+            DialogResult dr =  ExibeMessageBox.Confirmacao("Deseja mesmo limpar os arquivos temporários de sistema e usuário", "Alerta");
+
+            if (dr == DialogResult.OK)
             {
                 LimpaTemporarios.FazerLimpeza();
                 MessageBox.Show("Limpeza efetuada com sucesso!");
             }
-        }  
-        
-        public DialogResult MessageBoxConfirmacao(string mensagem, string titulo)
-        {
-            DialogResult dr = MessageBox.Show(mensagem, titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            return dr;
         }
     }
 }

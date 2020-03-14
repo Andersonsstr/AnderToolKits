@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Classes\LimpaTemporarios.cs" />
+    <Compile Include="src\Classes\ExibeMessageBox.cs" />
     <Compile Include="src\Classes\Processo.cs" />
     <Compile Include="src\Main.cs">
       <SubType>Form</SubType>
