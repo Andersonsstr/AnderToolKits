@@ -1,4 +1,4 @@
-﻿namespace ToolKits_Template.src.Telas
+﻿namespace AnderToolKits.src.Telas
 {
     partial class Mstsc
     {

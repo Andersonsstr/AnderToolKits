@@ -1,4 +1,4 @@
-﻿namespace ToolKits_Template
+﻿namespace AnderToolKits
 {
     partial class Main
     {
@@ -41,6 +41,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnExplorer = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.lblHostname = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.lblSO = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,7 @@
             this.configurarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(589, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,7 +87,7 @@
             // 
             // btnMstsc
             // 
-            this.btnMstsc.Location = new System.Drawing.Point(71, 48);
+            this.btnMstsc.Location = new System.Drawing.Point(69, 80);
             this.btnMstsc.Name = "btnMstsc";
             this.btnMstsc.Size = new System.Drawing.Size(173, 30);
             this.btnMstsc.TabIndex = 1;
@@ -94,7 +97,7 @@
             // 
             // btnCalculadora
             // 
-            this.btnCalculadora.Location = new System.Drawing.Point(71, 93);
+            this.btnCalculadora.Location = new System.Drawing.Point(69, 125);
             this.btnCalculadora.Name = "btnCalculadora";
             this.btnCalculadora.Size = new System.Drawing.Size(173, 30);
             this.btnCalculadora.TabIndex = 2;
@@ -104,7 +107,7 @@
             // 
             // btnCMD
             // 
-            this.btnCMD.Location = new System.Drawing.Point(71, 138);
+            this.btnCMD.Location = new System.Drawing.Point(69, 170);
             this.btnCMD.Name = "btnCMD";
             this.btnCMD.Size = new System.Drawing.Size(173, 30);
             this.btnCMD.TabIndex = 3;
@@ -114,7 +117,7 @@
             // 
             // btnPainelControle
             // 
-            this.btnPainelControle.Location = new System.Drawing.Point(348, 48);
+            this.btnPainelControle.Location = new System.Drawing.Point(346, 80);
             this.btnPainelControle.Name = "btnPainelControle";
             this.btnPainelControle.Size = new System.Drawing.Size(173, 30);
             this.btnPainelControle.TabIndex = 4;
@@ -124,16 +127,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(348, 93);
+            this.button1.Location = new System.Drawing.Point(346, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 30);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Limpar Temporários";
+            this.button1.Text = "Limpar Temporários do Windows";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnLimparTemporariosWindows_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(71, 184);
+            this.button2.Location = new System.Drawing.Point(346, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(173, 30);
             this.button2.TabIndex = 6;
@@ -142,7 +146,7 @@
             // 
             // btnExplorer
             // 
-            this.btnExplorer.Location = new System.Drawing.Point(348, 138);
+            this.btnExplorer.Location = new System.Drawing.Point(69, 215);
             this.btnExplorer.Name = "btnExplorer";
             this.btnExplorer.Size = new System.Drawing.Size(173, 30);
             this.btnExplorer.TabIndex = 7;
@@ -152,7 +156,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(348, 184);
+            this.button3.Location = new System.Drawing.Point(346, 170);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(173, 30);
             this.button3.TabIndex = 8;
@@ -160,11 +164,41 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.btnChrome);
             // 
+            // lblHostname
+            // 
+            this.lblHostname.AutoSize = true;
+            this.lblHostname.Location = new System.Drawing.Point(66, 47);
+            this.lblHostname.Name = "lblHostname";
+            this.lblHostname.Size = new System.Drawing.Size(58, 13);
+            this.lblHostname.TabIndex = 10;
+            this.lblHostname.Text = "Hostname:";
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Location = new System.Drawing.Point(66, 60);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(20, 13);
+            this.lblIP.TabIndex = 11;
+            this.lblIP.Text = "IP:";
+            // 
+            // lblSO
+            // 
+            this.lblSO.AutoSize = true;
+            this.lblSO.Location = new System.Drawing.Point(66, 34);
+            this.lblSO.Name = "lblSO";
+            this.lblSO.Size = new System.Drawing.Size(28, 13);
+            this.lblSO.TabIndex = 12;
+            this.lblSO.Text = "S.O:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 253);
+            this.ClientSize = new System.Drawing.Size(589, 281);
+            this.Controls.Add(this.lblSO);
+            this.Controls.Add(this.lblIP);
+            this.Controls.Add(this.lblHostname);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnExplorer);
             this.Controls.Add(this.button2);
@@ -200,6 +234,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnExplorer;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblHostname;
+        private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Label lblSO;
     }
 }
 

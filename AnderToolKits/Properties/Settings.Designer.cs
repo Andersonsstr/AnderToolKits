@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToolKits_Template.Properties
+namespace AnderToolKits.Properties
 {
 
 

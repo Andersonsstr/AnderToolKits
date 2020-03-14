@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToolKits_Template.src.Telas
+namespace AnderToolKits.src.Telas
 {
     public partial class Mstsc : Form
     {
