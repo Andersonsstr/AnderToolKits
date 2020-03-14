@@ -143,10 +143,11 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Pingar IP";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnPing_Click);
             // 
             // btnExplorer
             // 
-            this.btnExplorer.Location = new System.Drawing.Point(69, 215);
+            this.btnExplorer.Location = new System.Drawing.Point(346, 170);
             this.btnExplorer.Name = "btnExplorer";
             this.btnExplorer.Size = new System.Drawing.Size(173, 30);
             this.btnExplorer.TabIndex = 7;
@@ -156,7 +157,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(346, 170);
+            this.button3.Location = new System.Drawing.Point(69, 215);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(173, 30);
             this.button3.TabIndex = 8;

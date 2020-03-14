@@ -59,11 +59,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Telas\Mstsc.cs">
+    <Compile Include="src\Telas\PegaDado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Telas\Mstsc.Designer.cs">
-      <DependentUpon>Mstsc.cs</DependentUpon>
+    <Compile Include="src\Telas\PegaDado.Designer.cs">
+      <DependentUpon>PegaDado.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="src\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -77,8 +77,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="src\Telas\Mstsc.resx">
-      <DependentUpon>Mstsc.cs</DependentUpon>
+    <EmbeddedResource Include="src\Telas\PegaDado.resx">
+      <DependentUpon>PegaDado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

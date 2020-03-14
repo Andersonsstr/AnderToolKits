@@ -11,28 +11,26 @@ using System.Windows.Forms;
 
 namespace AnderToolKits.src.Telas
 {
-    public partial class Mstsc : Form
+    public partial class PegaDado : Form
     {
-        public Mstsc()
+        public PegaDado(string mensagem)
         {
             InitializeComponent();
+            lblMensagem.Text = mensagem;
         }
+
+        public string dadoInformado;
 
         private void btnOk_OnClick(object sender, EventArgs e)
         {
-            Process rdcProcess = new Process();
-
-            string executable = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\system32\mstsc.exe");
-            if (executable != null)
-            {
-                rdcProcess.StartInfo.FileName = executable;
-                rdcProcess.StartInfo.Arguments = "/v " + txtEndereco.Text; 
-                rdcProcess.Start();
-            }
+            dadoInformado = lblInput.Text;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

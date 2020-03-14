@@ -19,7 +19,7 @@ namespace ToolKits_Template.src.Classes
                 if (executavel != null)
                 {
                     processo.StartInfo.FileName = executavel;
-                    processo.StartInfo.Arguments = "";
+                    processo.StartInfo.Arguments = argumentos;
                     processo.Start();
                 }
             }
