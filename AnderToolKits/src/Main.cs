@@ -48,45 +48,7 @@ namespace AnderToolKits
         {
             InitializeComponent();
             ImprimeInfoBasicas();
-        }
-
-        private void btnMstsc_Click(object sender, EventArgs e)
-        {
-            PegaDado mstsc = new PegaDado("Informe o IP/Hostname para iniciar o acesso", "");
-            mstsc.ShowDialog();
-
-            if (mstsc.DialogResult == DialogResult.OK)
-            {
-                Processo.Executa("mstsc", "-v " + mstsc.dadoInformado, true);
-            }
-        }
-        private void btnPing_Click(object sender, EventArgs e)
-        {
-            PegaDado pegaDado = new PegaDado("Informe o IP/Hostname para verificar", "Necessário informar IP ou Hostname");
-            pegaDado.ShowDialog();
-
-            if (pegaDado.DialogResult == DialogResult.OK)
-            {
-                try
-                {
-                    Ping ping = new Ping();
-                    PingReply pingReply = ping.Send(pegaDado.dadoInformado);
-
-                    if (pingReply.Status == IPStatus.Success)
-                    {
-                        MessageBox.Show("Máquina Online!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Máquina Offline!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ExibeMessageBox.Erro(ex.Message);                    
-                }
-            }
-        }
+        }       
 
         private void btnCalculadora_Click(object sender, EventArgs e)
         {
@@ -120,8 +82,47 @@ namespace AnderToolKits
             if (dr == DialogResult.OK)
             {
                 LimpaTemporarios.FazerLimpeza();
-                MessageBox.Show("Limpeza efetuada com sucesso!");
+                ExibeMessageBox.Sucesso("Limpeza efetuada com sucesso!");
             }
         }
+
+        private void btnMstsc_Click(object sender, EventArgs e)
+        {
+            PegaDado pegaDado = new PegaDado("Informe o IP/Hostname para iniciar o acesso", "");
+            pegaDado.ShowDialog();
+
+            if (pegaDado.DialogResult == DialogResult.OK)
+            {
+                Processo.Executa("mstsc", "-v " + pegaDado.dadoInformado, true);
+            }
+        }
+        private void btnPing_Click(object sender, EventArgs e)
+        {
+            PegaDado pegaDado = new PegaDado("Informe o IP/Hostname para verificar", "Necessário informar IP ou Hostname");
+            pegaDado.ShowDialog();
+
+            if (pegaDado.DialogResult == DialogResult.OK)
+            {
+                try
+                {
+                    Ping ping = new Ping();
+                    PingReply pingReply = ping.Send(pegaDado.dadoInformado);
+
+                    if (pingReply.Status == IPStatus.Success)
+                    {
+                        MessageBox.Show("Máquina Online!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Máquina Offline!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ExibeMessageBox.Erro(ex.Message);
+                }
+            }
+        }
+
     }
 }

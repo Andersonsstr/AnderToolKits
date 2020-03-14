@@ -14,6 +14,11 @@ namespace ToolKits_Template.src.Classes
             MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public static void Sucesso(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static DialogResult Confirmacao(string mensagem, string titulo)
         {
             DialogResult dr = MessageBox.Show(mensagem, titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
